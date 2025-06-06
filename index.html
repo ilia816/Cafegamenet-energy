@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منوی گیم‌نت انرژی - دنیای بازی و طعم بی‌نظیر!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d1e; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+            direction: rtl; /* Right-to-left direction for Persian */
+            text-align: right; /* Align text to the right */
+            line-height: 1.6;
+            background-image: linear-gradient(to bottom right, #0d0d1e, #1a0f30); /* Subtle gradient background */
+            background-attachment: fixed; /* Fixes background during scroll */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Header Styling */
+        header {
+            background-color: rgba(15, 52, 96, 0.9); /* Slightly transparent dark blue */
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 5px solid #e94560; /* Vibrant accent line */
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7); /* Stronger shadow */
+            backdrop-filter: blur(8px); /* Glassmorphism effect */
+            -webkit-backdrop-filter: blur(8px);
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            max-width: 160px; /* Slightly smaller logo for more sleek look */
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid #e94560; /* Accent border around logo */
+            box-shadow: 0 0 25px rgba(233, 69, 96, 0.9); /* Stronger glow */
+            transition: transform 0.4s ease-in-out;
+        }
+        .logo:hover {
+            transform: scale(1.08) rotate(5deg); /* More dynamic hover */
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 3.5em; /* Even larger title */
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            font-weight: 900;
+            letter-spacing: 3px; /* More spacing */
+            text-transform: uppercase; /* All caps for bold statement */
+        }
+
+        .tagline {
+            font-size: 1.6em;
+            color: #c0c0c0;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+            margin-top: 5px;
+        }
+
+        /* Main Content Area */
+        main {
+            padding: 40px 20px;
+            max-width: 1000px; /* Wider main content */
+            margin: 40px auto;
+            background-color: rgba(18, 38, 58, 0.9); /* Slightly transparent background */
+            border-radius: 20px; /* More rounded corners */
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8); /* Even stronger shadow */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(233, 69, 96, 0.3); /* Subtle accent border */
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Section Styling (Gaming, Drinks, Food) - Card-like design */
+        .menu-section {
+            margin-bottom: 60px; /* More space between sections */
+            padding: 30px;
+            border-radius: 15px;
+            background-color: rgba(26, 49, 78, 0.7); /* Slightly transparent card background */
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 5px 25px rgba(0, 0, 0, 0.6); /* Inner and outer shadow */
+            transition: all 0.4s ease-in-out; /* Smooth transition for hover */
+            border: 1px solid rgba(233, 69, 96, 0.2); /* Very subtle border */
+        }
+        .menu-section:hover {
+            transform: translateY(-8px); /* Lift up more on hover */
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.6), 0 10px 35px rgba(0, 0, 0, 0.8);
+            background-color: rgba(26, 49, 78, 0.85); /* Slightly darker on hover */
+        }
+
+        .menu-section h2 {
+            color: #e94560; /* Main accent color */
+            font-size: 3.5em; /* Larger, more dominant section titles */
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 4px solid #e94560;
+            padding-bottom: 18px;
+            text-shadow: 0 0 12px rgba(233, 69, 96, 0.8); /* Stronger accent glow */
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+        }
+        .menu-section h2::after { /* Decorative line under title */
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 3px;
+            background-color: #4CAF50; /* Secondary accent color */
+            border-radius: 5px;
+        }
+
+        .menu-category {
+            margin-bottom: 35px;
+        }
+        .menu-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu-category h3 {
+            color: #ffffff;
+            font-size: 2.2em; /* Larger category title */
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed rgba(74, 90, 109, 0.6); /* More visible dashed border */
+            font-weight: 700;
+            position: relative;
+        }
+        .menu-category h3::before { /* Decorative bullet point */
+            content: '♦'; /* Diamond bullet */
+            color: #e94560;
+            position: absolute;
+            right: -20px; /* Position to the right */
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8em;
+        }
+
+        /* Menu Item Styling */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Vertically align content */
+            margin-bottom: 25px;
+            padding: 15px 0;
+            border-bottom: 1px dotted rgba(58, 74, 93, 0.5); /* Lighter dotted separator */
+            transition: background-color 0.3s ease-in-out;
+        }
+        .menu-item:hover {
+            background-color: rgba(0, 0, 0, 0.1); /* Subtle highlight on hover */
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item-details {
+            flex-grow: 1;
+        }
+
+        .menu-item h4 { /* Changed to h4 for sub-item titles */
+            margin: 0;
+            color: #e0e0e0;
+            font-size: 1.5em; /* Larger item title */
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .menu-item p {
+            margin: 0;
+            font-size: 1.1em;
+            color: #a0a0a0;
+            padding-left: 10px;
+        }
+
+        .menu-item .price {
+            font-weight: 900;
+            color: #4CAF50; /* Vibrant green for prices */
+            font-size: 1.8em; /* Even larger price */
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.7); /* Stronger green glow */
+            margin-right: 15px; /* Space from text */
+        }
+
+        .note {
+            text-align: center;
+            margin-top: 50px;
+            font-style: italic;
+            color: #b0b0b0;
+            font-size: 1.3em; /* Larger note text */
+            padding: 15px;
+            border: 2px dashed rgba(233, 69, 96, 0.4); /* Accent dashed border */
+            border-radius: 8px;
+            background-color: rgba(26, 49, 78, 0.6);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: rgba(15, 52, 96, 0.9);
+            color: #a0a0a0;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            font-size: 1.1em;
+            border-top: 5px solid #e94560;
+            box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            position: relative;
+            z-index: 10;
+        }
+
+        footer a {
+            color: #e94560;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer a:hover {
+            color: #ff6f8a;
+            text-decoration: underline;
+        }
+
+        .tagline-footer {
+            margin-top: 20px;
+            font-size: 1.4em;
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3em;
+                letter-spacing: 2px;
+            }
+            .tagline {
+                font-size: 1.4em;
+            }
+            .menu-section h2 {
+                font-size: 3em;
+                letter-spacing: 1px;
+            }
+            .menu-category h3 {
+                font-size: 2em;
+            }
+            .menu-item h4 {
+                font-size: 1.4em;
+            }
+            .menu-item p {
+                font-size: 1em;
+            }
+            .menu-item .price {
+                font-size: 1.6em;
+            }
+            main {
+                margin: 30px auto;
+                padding: 30px 15px;
+            }
+            .menu-section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            header {
+                padding: 20px 10px;
+            }
+            .logo {
+                max-width: 100px;
+            }
+            h1 {
+                font-size: 2.5em;
+                letter-spacing: 1px;
+            }
+            .tagline {
+                font-size: 1.2em;
+            }
+            .menu-section h2 {
+                font-size: 2.5em;
+            }
+            .menu-category h3 {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-end;
+                text-align: right;
+                padding: 10px 0;
+            }
+            .menu-item-details {
+                width: 100%; /* Take full width */
+                text-align: right;
+            }
+            .menu-item h4 {
+                font-size: 1.3em;
+            }
+            .menu-item p {
+                padding-left: 0;
+                font-size: 0.95em;
+            }
+            .menu-item .price {
+                align-self: flex-end;
+                margin-top: 8px;
+                margin-right: 0;
+                font-size: 1.4em;
+            }
+            .note {
+                font-size: 1.1em;
+                padding: 10px;
+            }
+            footer {
+                padding: 20px 10px;
+                font-size: 1em;
+            }
+            .tagline-footer {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="لوگوی گیم‌نت انرژی" class="logo">
+        <h1>گیم‌نت انرژی</h1>
+        <p class="tagline">جایی که پینگت عالیه و قهوه‌ات بی‌نظیر!</p>
+    </header>
+
+    <main>
+        <section class="menu-section gaming-section">
+            <h2>🎮 میدان نبرد شما! 🎮</h2>
+            <div class="menu-category">
+                <h3>🎮 پکیج‌های بازی (هر ساعت) 🎮</h3>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>تک نفره</h4>
+                        <p>هیجان بازی انفرادی و تمرکز روی نبردها.</p>
+                    </div>
+                    <span class="price">۱۰۰,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>دو نفره</h4>
+                        <p>تیم شو با رفیقت و حریفانت رو شکست بده!</p>
+                    </div>
+                    <span class="price">۱۰۰,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>سه نفره</h4>
+                        <p>یک گروه کوچک برای تسخیر دنیاهای مجازی.</p>
+                    </div>
+                    <span class="price">۱۲۰,۰۰۰ تومان</span>
+                </div>
+                 <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>چهار نفره</h4>
+                        <p>تیم کامل برای نبردهای حماسی و رقابت‌های نفس‌گیر!</p>
+                    </div>
+                    <span class="price">۱۴۰,۰۰۰ تومان</span>
+                </div>
+            </div>
+            <p class="note">صدها عنوان بازی روز دنیا در دسترس شماست! از شوترهای نفس‌گیر تا بازی‌های استراتژیک.</p>
+        </section>
+
+        <section class="menu-section drinks-section">
+            <h2>☕ معجون‌های پیروزی و آرامش! 🥤</h2>
+            <div class="menu-category">
+                <h3>☕ قهوه‌های گرم: سوخت اصلی قهرمانان ☕</h3>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>قهوه روز (۵۰/۵۰ عربیکا)</h4>
+                        <p>انتخابی متعادل برای شروع یا ادامه روزی پر از انرژی!</p>
+                    </div>
+                    <span class="price">۶۰,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>اسپرسو (۷۰/۳۰ عربیکا)</h4>
+                        <p>طعم قوی و عطری دلنشین، برای حرفه‌ای‌ها!</p>
+                    </div>
+                    <span class="price">۸۰,۰۰۰ تومان</span>
+                </div>
+                 <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>لته (۷۰/۳۰ عربیکا)</h4>
+                        <p>ترکیب هنر و طعم، با شیر تازه و قهوه ممتاز.</p>
+                    </div>
+                    <span class="price">۸۰,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>کاپوچینو (۷۰/۳۰ عربیکا)</h4>
+                        <p>لایه‌ای از فوم مخملی و قهوه‌ای عمیق.</p>
+                    </div>
+                    <span class="price">۹۰,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>هات چاکلت</h4>
+                        <p>لذت شیرین و گرم برای لحظات استراحت.</p>
+                    </div>
+                    <span class="price">۹۰,۰۰۰ تومان</span>
+                </div>
+                 <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>چای نبات</h4>
+                        <p>گرم و دلپذیر، سنتی و آرامش‌بخش.</p>
+                    </div>
+                    <span class="price">۲۵,۰۰۰ تومان</span>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>🥤 نوشیدنی‌های سرد: رفرش و ری‌استارت 🥤</h3>
+                 <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>آیس لته</h4>
+                        <p>خنک و دلپذیر، انرژی‌بخش برای روزهای گرم.</p>
+                    </div>
+                    <span class="price">۹۰,۰۰۰ تومان</span>
+                </div>
+                 <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>آیس کارامل ماکیاتو</h4>
+                        <p>طعم شیرین کارامل و قهوه، تجربه‌ای متفاوت.</p>
+                    </div>
+                    <span class="price">۱۰۰,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>لیموناد</h4>
+                        <p>تازگی و طراوت لیمو، چاشنی لحظات شما.</p>
+                    </div>
+                    <span class="price">۳۰,۰۰۰ تومان</span>
+                </div>
+                 <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>آب معدنی</h4>
+                    </div>
+                    <span class="price">۱۰,۰۰۰ تومان</span>
+                </div>
+                 <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>انواع نوشابه</h4>
+                    </div>
+                    <span class="price">۲۵,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>ایستک (انواع طعم)</h4>
+                    </div>
+                    <span class="price">۴۰,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>سانی نس (انواع طعم)</h4>
+                    </div>
+                    <span class="price">۳۵,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>Freez (انواع طعم)</h4>
+                    </div>
+                    <span class="price">۱۲۰,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>هایپ (Hyper)</h4>
+                    </div>
+                    <span class="price">۹۵,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>هافنبرگ</h4>
+                    </div>
+                    <span class="price">۴۰,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>آب گازدار</h4>
+                    </div>
+                    <span class="price">۴۰,۰۰۰ تومان</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section food-section">
+            <h2>🍔 خوراکی‌های لول آپ! 🍟</h2>
+            <div class="menu-category">
+                <h3>🍩 میان‌وعده‌های شیرین: جعبه لوت شما! 🍩</h3>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>کیک کروسان</h4>
+                        <p>یک میان‌وعده خوشمزه و انرژی‌بخش برای ادامه بازی.</p>
+                    </div>
+                    <span class="price">۲۰,۰۰۰ تومان</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-details">
+                        <h4>کیک معینی پور</h4>
+                        <p>طعم خانگی و دلپذیر برای یک استراحت شیرین.</p>
+                    </div>
+                    <span class="price">۲۰,۰۰۰ تومان</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>آدرس: اهواز، کیانپارس، خیابان ۶، فاز یک، گیم‌نت انرژی</p>
+        <p>ساعات کاری: ۲۴ ساعته</p>
+        <p>تلفن: <a href="tel:+989166046839">۰۹۱۶۶۰۴۶۸۳۹ (آقا داوود)</a> - <a href="tel:+98930400439">۰۹۳۰۴۰۰۴۳۹ (آقا امین)</a></p>
+        <p>اینستاگرام: <a href="https://instagram.com/cafegame.energy" target="_blank">@cafegame.energy</a></p>
+        <p class="tagline-footer">ما منتظریم تا قهرمان بعدی باشی!</p>
+    </footer>
+</body>
+</html>
